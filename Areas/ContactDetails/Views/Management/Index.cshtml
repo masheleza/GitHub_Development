@@ -1,0 +1,83 @@
+﻿@model MvcApplication1.Areas.ContactDetails.Models.ContactDetails
+@{
+    ViewBag.Title = "Index";
+   // Layout = "~/Views/Shared/_Layout.cshtml"; 
+    <link rel="stylesheet" href="~/Content/site.css" type="text/css" />
+}
+
+<div id="content">
+    <div id="body">
+        <h3>body here</h3>
+        @using (Html.BeginForm())
+        { 
+            @Html.ValidationSummary(true)
+            <fieldset style="opacity: 1.5; padding: 10px 5px 10px 5px">
+                <legend>Contact Details </legend>
+                <table>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.FirstName)</td>
+                        <td style="padding-left: 20px">@Html.TextBoxFor(model => model.FirstName)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.LastName)</td>
+                        <td style="padding-left: 20px">@Html.TextBoxFor(model => model.LastName)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.Email)</td>
+                        <td style="padding-left: 20px">@Html.TextBoxFor(model => model.Email)   </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.HomePhone)</td>
+                        <td style="padding-left: 20px">@Html.TextBoxFor(model => model.HomePhone.CountryCode)
+                            @Html.TextBoxFor(model => model.HomePhone.AreaCode)
+                            @Html.TextBoxFor(model => model.HomePhone.PhoneNumber)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.CellPhone)</td>
+                        <td style="padding-left: 20px">@Html.TextBoxFor(model => model.CellPhone.CountryCode)
+                            @Html.TextBoxFor(model => model.CellPhone.AreaCode)
+                            @Html.TextBoxFor(model => model.CellPhone.PhoneNumber)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.HomeAddress.Line1)</td>
+                        <td style="padding-left: 20px">@Html.TextBoxFor(model => model.HomeAddress.Line1)   </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.HomeAddress.Line2)</td>
+                        <td style="padding-left: 20px">@Html.TextBoxFor(model => model.HomeAddress.Line2)   </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.HomeAddress.Line3)</td>
+                        <td style="padding-left: 20px">@Html.TextBoxFor(model => model.HomeAddress.Line3)   </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.HomeAddress.City)</td>
+                        <td style="padding-left: 20px">@Html.TextBoxFor(model => model.HomeAddress.City)   </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.HomeAddress.Province)</td>
+                        <td style="padding-left: 20px">@Html.TextBoxFor(model => model.HomeAddress.Province)   </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.HomeAddress.Country)</td>
+                        <td style="padding-left: 20px">@Html.TextBoxFor(model => model.HomeAddress.Country)   </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.HomeAddress.PostalCode)</td>
+                        <td style="padding-left: 20px">@Html.TextBoxFor(model => model.HomeAddress.PostalCode)   </td>
+                    </tr>
+                </table>
+                <p>
+                    <input type="submit" value="Create" />
+                </p>
+            </fieldset>  }
+        @Html.ActionLink("Back to List", "Index")
+
+    </div>
+    <div id="sidebar">
+        <h3></h3>
+    </div>
+</div>
+
